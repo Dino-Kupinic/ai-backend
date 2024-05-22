@@ -2,9 +2,11 @@ import ollama
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
+from routers import message
+
 
 class Message(BaseModel):
-    msg: str
+    text: str
 
 
 def query(msg: str):
@@ -22,20 +24,14 @@ def query(msg: str):
         raise HTTPException(status_code=500, detail="Unexpected error")
 
 
-app = FastAPI()
+app = FastAPI(
+    title="AI Backend",
+    description="ai backend for your app powered by llama3",
+    version="0.1.0"
+)
+app.include_router(message.router)
 
 
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-
-
-@app.post("/message")
-def message(msg: Message):
-    response = query(msg.msg)
-    return {"data": response}
-
-
-if __name__ == "__main__":
-    test_message = Message(msg="What is the capital of USA?")
-    print(query(test_message.msg))
