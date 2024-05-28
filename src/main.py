@@ -1,28 +1,6 @@
-import ollama
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+from fastapi import FastAPI
 
-from routers import message
-
-
-class Message(BaseModel):
-    text: str
-
-
-def query(msg: str):
-    try:
-        response = ollama.chat(model="llama3", messages=[
-            {
-                'role': 'user',
-                'content': msg,
-            },
-        ])
-
-        return response['message']['content']
-    except Exception as e:
-        print(f"Unexpected error: {str(e)}")
-        raise HTTPException(status_code=500, detail="Unexpected error")
-
+from src.routers import message
 
 app = FastAPI(
     title="AI Backend",
@@ -30,8 +8,3 @@ app = FastAPI(
     version="0.1.0"
 )
 app.include_router(message.router)
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
