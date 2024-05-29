@@ -1,3 +1,9 @@
 ollama~=0.2.0
 fastapi~=0.111.0
 pydantic~=2.7.1
+mypy~=1.10.0
+mypy-extensions~=1.0.0
+pytest~=8.2.1
+
+# Optional dependencies
+black~=24.4.2
