@@ -9,13 +9,11 @@ app = FastAPI(
     version="0.1.0",
 )
 
-origins = [
-    "http://localhost",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
-    origins=origins,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
