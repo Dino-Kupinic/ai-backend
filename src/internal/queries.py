@@ -2,16 +2,21 @@ import ollama
 from fastapi import HTTPException
 
 
-def query(msg: str):
+def query(msg: str, model: str = "llama3"):
     try:
-        response = ollama.chat(model="llama3", messages=[
+        messages = [
             {
-                'role': 'user',
-                'content': msg,
+                "role": "user",
+                "content": msg,
             },
-        ])
+        ]
+        for chunk in ollama.chat(
+            model,
+            messages=messages,
+            stream=True,
+        ):
+            yield chunk["message"]["content"]
 
-        return response['message']['content']
     except Exception as e:
         print(f"Unexpected error: {str(e)}")
         raise HTTPException(status_code=500, detail="Unexpected error")
