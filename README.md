@@ -42,6 +42,14 @@ The OpenAPI documentation is available at `/docs`. It is automatically generated
 
 ### Usage
 
+```bash
+curl -X POST "http://localhost:8000/message/" -H "Content-Type: application/json" -d '{"text": "Tell me something about Vienna, Austria"}' --no-buffer
+```
+
+> [!TIP]
+> `--no-buffer` is needed due to streaming.
+
+
 // WIP
 
 ## 📝 Contributing
