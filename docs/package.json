@@ -1,0 +1,16 @@
+{
+  "name": "ai-backend-docs",
+  "version": "0.1.2",
+  "description": "Documentation for the AI Backend project",
+  "scripts": {
+    "docs:dev": "vitepress dev src",
+    "docs:build": "vitepress build src",
+    "docs:preview": "vitepress preview src"
+  },
+  "keywords": ["python3", "fastapi", "ai", "backend", "documentation", "llama3", "ollama"],
+  "author": "Dino Kupinic",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^1.2.3"
+  }
+}
