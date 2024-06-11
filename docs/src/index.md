@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/get-started
+      link: /guide/getting-started
     - theme: alt
       text: What is AI Backend?
       link: /guide/what-is-ai-backend
