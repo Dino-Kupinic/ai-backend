@@ -89,7 +89,7 @@ class ImageQuery(Query):
 
             model_name = model.value if isinstance(model, ImageModel) else model
             messages = [{"role": "user", "content": prompt}]
-            yield from self._image_llm_call(model_name, prompt, messages, images)
+            yield from self._image_llm_call(model_name, messages, images)
         except Exception as e:
             print(f"Unexpected error: {str(e)}")
             raise HTTPException(
@@ -97,9 +97,7 @@ class ImageQuery(Query):
             )
 
     @staticmethod
-    def _image_llm_call(
-        model: str, prompt: str, messages: list, images: list
-    ) -> LLMResponse:
+    def _image_llm_call(model: str, messages: list, images: list) -> LLMResponse:
         for chunk in ollama.chat(
             model,
             messages=messages,

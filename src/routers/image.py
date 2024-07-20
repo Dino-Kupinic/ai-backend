@@ -21,7 +21,7 @@ async def send_message(image: Image):
             raise HTTPException(status_code=400, detail="Invalid model type")
 
         return StreamingResponse(
-            image_query.query(prompt=image.prompt, model=model),
+            image_query.query(prompt=image.prompt, model=model, images=image.images),
             media_type="text/plain",
         )
     except HTTPException as http_exc:
