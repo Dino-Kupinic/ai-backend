@@ -1,27 +1,27 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 
-from src.internal.query import TextQuery
-from src.types.requests import Message
 from src.internal.models import TextModel
+from src.internal.query import ImageQuery
+from src.types.requests import Image
 
-router = APIRouter(prefix="/message", tags=["message"])
+router = APIRouter(prefix="/image", tags=["image"])
 
-text_query = TextQuery()
+image_query = ImageQuery()
 
 
 @router.post("/")
-async def send_message(message: Message):
+async def send_message(image: Image):
     try:
-        if isinstance(message.model, TextModel):
-            model = message.model
-        elif isinstance(message.model, str):
-            model = message.model
+        if isinstance(image.model, TextModel):
+            model = image.model
+        elif isinstance(image.model, str):
+            model = image.model
         else:
             raise HTTPException(status_code=400, detail="Invalid model type")
 
         return StreamingResponse(
-            text_query.query(prompt=message.prompt, model=model),
+            image_query.query(prompt=image.prompt, model=model),
             media_type="text/plain",
         )
     except HTTPException as http_exc:
