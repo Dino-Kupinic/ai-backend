@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 
-from src.internal.models import TextModel
+from src.internal.models import ImageModel
 from src.internal.query import ImageQuery
 from src.types.requests import Image
 
@@ -13,7 +13,7 @@ image_query = ImageQuery()
 @router.post("/")
 async def send_message(image: Image):
     try:
-        if isinstance(image.model, TextModel):
+        if isinstance(image.model, ImageModel):
             model = image.model
         elif isinstance(image.model, str):
             model = image.model

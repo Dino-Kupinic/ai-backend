@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.routers import message
+from src.routers import message, image
 
 app = FastAPI(
     title="AI Backend",
@@ -20,3 +20,4 @@ app.add_middleware(
 )
 
 app.include_router(message.router)
+app.include_router(image.router)
