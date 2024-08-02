@@ -3,7 +3,17 @@
 > [!CAUTION]
 > AI Backend is still in Development. You will find bugs and broken/unfinished features.
 
-## ✨ Installation and Configuration
+## 🌟 Overview
+
+ai-backend is a backend for AI-powered applications. It leverages FastAPI and Ollama to provide a robust API for natural language processing tasks.
+
+## 🚀 Installation and Configuration
+
+###  Prerequisites
+
+- Python 3.12
+- pip
+- git
 
 ### Installation for Development
 
@@ -32,6 +42,8 @@ pip install -r requirements.txt
 fastapi dev src/main.py
 ```
 
+## 📖 Documentation
+
 ### OpenAPI Documentation
 
 The OpenAPI documentation is available at `/docs`. It is automatically generated from the code.
@@ -52,6 +64,19 @@ curl -X POST "http://localhost:8000/message/" -H "Content-Type: application/json
 
 // WIP
 
+## 🧪 Testing
+
+To run the test suite:
+
+1. Ensure that both the AI Backend and Ollama services are running.
+2. Execute the following command:
+
+```bash
+pytest
+```
+
+This will run all tests in the `tests/` directory.
+
 ## 📝 Contributing
 
 // WIP
@@ -62,6 +87,14 @@ curl -X POST "http://localhost:8000/message/" -H "Content-Type: application/json
 - [Ollama](https://ollama.com/)
 - [Pydantic](https://pydantic-docs.helpmanual.io/)
 
-## 😊 License
+## 📄 License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+- Special thanks to the FastAPI and Ollama communities for their excellent tools and documentation
+
+---
+
+For more information, please [open an issue](https://github.com/Dino-Kupinic/ai-backend/issues) or contact the maintainers.

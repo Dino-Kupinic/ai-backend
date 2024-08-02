@@ -2,7 +2,7 @@
   {
     "prompt": "What can you see in the image?",
     "model": "llava",
-    "image": "tests/assets/images/bird.jpg",
+    "images": ["images/bird.jpg"],
     "answers": [
       "bird",
       "animal",
@@ -15,7 +15,7 @@
   {
     "prompt": "What can you see in the image?",
     "model": "llava",
-    "image": "tests/assets/images/cat.jpg",
+    "images": ["images/cat.jpg"],
     "answers": [
       "cat",
       "animal",
@@ -29,7 +29,7 @@
   {
     "prompt": "What can you see in the image?",
     "model": "llava",
-    "image": "tests/assets/images/house.webp",
+    "images": ["images/house.webp"],
     "answers": [
       "house",
       "building",
