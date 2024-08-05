@@ -6,4 +6,4 @@ mypy-extensions~=1.0.0
 pytest~=8.3.1
 
 # Optional dependencies
-black~=24.4.2
+black~=24.8.0
