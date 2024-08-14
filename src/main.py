@@ -6,7 +6,7 @@ from src.routers import message, image
 app = FastAPI(
     title="AI Backend",
     description="ai backend for your app powered by llama3",
-    version="0.2.1",
+    version="0.2.2",
 )
 
 origins = ["*"]
