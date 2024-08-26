@@ -1,7 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="h-full w-full">
-    <ChatWindow />
-  </div>
+  <p class="border p-10">Message</p>
 </template>

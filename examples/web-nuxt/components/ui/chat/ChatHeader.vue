@@ -67,14 +67,14 @@ const selected = useState("model", () => models[0])
         size="sm"
         color="gray"
         square
-        variant="soft"
+        variant="solid"
       />
       <UButton
         icon="i-heroicons-pencil-square"
         size="sm"
         color="gray"
         square
-        variant="soft"
+        variant="solid"
       />
     </div>
   </header>
