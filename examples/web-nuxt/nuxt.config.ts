@@ -9,6 +9,11 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  runtimeConfig: {
+    public: {
+      API_URL: process.env.API_URL,
+    },
+  },
   colorMode: {
     preference: "light",
   },

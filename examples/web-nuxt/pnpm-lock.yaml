@@ -16,8 +16,8 @@ importers:
         version: 3.4.38(typescript@5.5.4)
     devDependencies:
       '@dkupinic/eslint-config':
-        specifier: ^0.1.1
-        version: 0.1.1(eslint-config-prettier@9.1.0(eslint@9.9.1(jiti@1.21.6)))(eslint@9.9.1(jiti@1.21.6))
+        specifier: ^0.2.0
+        version: 0.2.0(eslint-config-prettier@9.1.0(eslint@9.9.1(jiti@1.21.6)))(eslint@9.9.1(jiti@1.21.6))
       '@iconify-json/heroicons':
         specifier: ^1.1.24
         version: 1.1.24
@@ -228,8 +228,8 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^6.0.13
 
-  '@dkupinic/eslint-config@0.1.1':
-    resolution: {integrity: sha512-6GgztVExQ6iOkXpmxhKU8HqgPMQFc4Yz0UghDBijisGOqwA9jUrL++avAAhAX5tDbNKG3FnkSOwOA1qB/OFKFg==}
+  '@dkupinic/eslint-config@0.2.0':
+    resolution: {integrity: sha512-FWxt9sc+3+4cVUzsEgLQsh39kT2ffFSmZ0kL9FgmKXM7rU7qB+29knDCRo3X2dSYRbWsVn5xNte2sZhIj4TM+g==}
     peerDependencies:
       eslint: ^9.9.1
       eslint-config-prettier: ^9.1.0
@@ -4744,7 +4744,7 @@ snapshots:
     dependencies:
       postcss-selector-parser: 6.1.2
 
-  '@dkupinic/eslint-config@0.1.1(eslint-config-prettier@9.1.0(eslint@9.9.1(jiti@1.21.6)))(eslint@9.9.1(jiti@1.21.6))':
+  '@dkupinic/eslint-config@0.2.0(eslint-config-prettier@9.1.0(eslint@9.9.1(jiti@1.21.6)))(eslint@9.9.1(jiti@1.21.6))':
     dependencies:
       eslint: 9.9.1(jiti@1.21.6)
       eslint-config-prettier: 9.1.0(eslint@9.9.1(jiti@1.21.6))

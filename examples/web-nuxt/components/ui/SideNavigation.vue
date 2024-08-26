@@ -6,24 +6,13 @@ const links = [
       avatar: {
         src: "https://api.dicebear.com/9.x/initials/svg?seed=Dino%20Kupinic",
       },
-      to: "/profile",
+      to: "/settings",
       badge: "Pro",
     },
   ],
   [
     {
       label: "Lorem Ipsum Dolor Sit Amet",
-    },
-  ],
-  [
-    {
-      label: "Settings",
-      icon: "i-heroicons-cog-8-tooth",
-      to: "/settings",
-    },
-    {
-      label: "Help",
-      icon: "i-heroicons-question-mark-circle",
     },
   ],
 ]
