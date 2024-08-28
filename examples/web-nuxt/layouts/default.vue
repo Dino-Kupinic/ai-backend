@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex h-screen">
+  <div class="flex h-dvh">
     <SideNavigation />
     <slot />
   </div>

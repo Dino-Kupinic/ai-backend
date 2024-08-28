@@ -27,6 +27,6 @@ const links = [
         variant: 'subtle',
       },
     }"
-    class="overflow-y-auto border-r border-neutral-200 p-2 dark:border-neutral-800"
+    class="hidden overflow-y-auto border-r border-neutral-200 p-2 sm:block dark:border-neutral-800"
   />
 </template>
