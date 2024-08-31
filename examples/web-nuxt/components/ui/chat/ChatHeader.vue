@@ -3,13 +3,10 @@ import type { Model } from "~/types/model"
 
 const config = useRuntimeConfig()
 
-// Manual type
-type ModelResponse = {
+const { data } = await useFetch<{
   text_models: string[]
   image_models: string[]
-}
-
-const { data } = await useFetch<ModelResponse>("/model", {
+}>("/model", {
   baseURL: config.public.API_URL,
 })
 
@@ -17,14 +14,14 @@ if (!data.value) {
   throw createError({ status: 404, message: "No models found" })
 }
 
-const models = [
+const models: Model[] = [
   ...data.value.text_models.map((model) => ({
     name: model,
-    type: "text",
+    type: "text" as const,
   })),
   ...data.value.image_models.map((model) => ({
     name: model,
-    type: "image",
+    type: "image" as const,
   })),
 ]
 

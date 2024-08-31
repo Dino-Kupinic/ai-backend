@@ -2,53 +2,13 @@
 import type { Model } from "~/types/model"
 
 const input = ref<string>("")
-
-const config = useRuntimeConfig()
 const model = useState<Model>("model")
-const data = ref("")
-const isLoading = ref(false)
 
-const fetchStream = async () => {
-  isLoading.value = true
-  data.value = ""
-
-  try {
-    const response = await $fetch("/message", {
-      method: "POST",
-      body: JSON.stringify({
-        prompt: input.value,
-        model: model.value.name,
-      }),
-      baseURL: config.public.API_URL,
-    })
-
-    if (response instanceof ReadableStream) {
-      const reader = response.getReader()
-      const decoder = new TextDecoder()
-
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-        const chunk = decoder.decode(value)
-        data.value += chunk
-      }
-    } else {
-      if (typeof response === "string") {
-        data.value = response
-      } else {
-        console.error("Unexpected response type")
-      }
-    }
-  } catch (error) {
-    console.error("Error fetching stream:", error)
-  } finally {
-    isLoading.value = false
-  }
-}
+const { data, isLoading, fetchStream } = useStream()
 
 const sendMessage = () => {
   if (input.value.trim() && !isLoading.value) {
-    fetchStream()
+    fetchStream(input.value, model.value)
   }
 }
 </script>
@@ -56,13 +16,25 @@ const sendMessage = () => {
 <template>
   <div class="flex h-full flex-col">
     <ChatHeader />
-    <div class="w-full grow overflow-y-auto sm:px-16 lg:px-32 2xl:px-[500px]">
+    <div
+      v-if="data"
+      class="w-full grow overflow-y-auto sm:px-16 lg:px-32 2xl:px-[500px]"
+    >
       <ChatMessage :is-sender="true">
         {{ input }}
       </ChatMessage>
       <ChatMessage :is-sender="false">
-        {{ data }}
+        <p v-if="isLoading">...</p>
+        <template v-else>
+          {{ data }}
+        </template>
       </ChatMessage>
+    </div>
+    <div
+      v-else
+      class="flex w-full grow items-center justify-center overflow-y-auto sm:px-16 lg:px-32 2xl:px-[500px]"
+    >
+      <p>Hello, Dino Kupinic</p>
     </div>
     <div class="flex items-end p-4 sm:px-16 lg:px-32 2xl:px-[500px]">
       <UButton
