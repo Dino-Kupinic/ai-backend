@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { Model } from "~/types/model"
+
 const config = useRuntimeConfig()
 
 // Manual type
@@ -26,7 +28,7 @@ const models = [
   })),
 ]
 
-const selected = useState("model", () => models[0])
+const selected = useState<Model>("model", () => models[0])
 </script>
 
 <template>
