@@ -1,0 +1,26 @@
+{
+  "name": "ai-backend-web-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.13.0",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@dkupinic/eslint-config": "^0.2.0",
+    "@iconify-json/heroicons": "^1.1.24",
+    "@nuxt/eslint": "^0.5.2",
+    "@nuxt/ui": "^2.18.4",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "typescript": "^5.5.4",
+    "vue-tsc": "^2.0.29"
+  }
+}
