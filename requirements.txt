@@ -1,4 +1,4 @@
-fastapi~=0.114.0
+fastapi~=0.115.0
 ollama~=0.3.3
 pydantic~=2.9.1
 mypy~=1.11.2
