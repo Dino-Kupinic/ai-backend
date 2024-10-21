@@ -26,7 +26,9 @@ const sendMessage = () => {
       <ChatMessage :is-sender="false">
         <p v-if="isLoading">...</p>
         <template v-else>
-          {{ data }}
+          <pre class="max-w-lg text-wrap text-base font-sans">
+            {{ data }}
+          </pre>
         </template>
       </ChatMessage>
     </div>
