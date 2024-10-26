@@ -2,14 +2,20 @@
 import type { Model } from "~/types/model"
 
 const input = ref<string>("")
+const text = ref<string>("")
 const model = useState<Model>("model")
+const thinking = ref<boolean>(false)
 
 const { data, isLoading, fetchStream } = useStream()
 
-const sendMessage = () => {
-  if (input.value.trim() && !isLoading.value) {
-    fetchStream(input.value, model.value)
+const sendMessage = async () => {
+  text.value = input.value
+  input.value = ""
+  thinking.value = true
+  if (text.value.trim() && !isLoading.value) {
+    await fetchStream(text.value, model.value)
   }
+  thinking.value = false
 }
 </script>
 
@@ -21,17 +27,18 @@ const sendMessage = () => {
       class="w-full grow overflow-y-auto sm:px-16 lg:px-32 2xl:px-[500px]"
     >
       <ChatMessage :is-sender="true">
-        {{ input }}
+        {{ text }}
       </ChatMessage>
       <ChatMessage :is-sender="false">
         <p v-if="isLoading">...</p>
         <template v-else>
-          <pre class="max-w-lg text-wrap text-base font-sans">
+          <pre class="max-w-lg text-wrap font-sans text-base">
             {{ data }}
           </pre>
         </template>
       </ChatMessage>
     </div>
+    <div v-else-if="thinking">Thinking...</div>
     <div
       v-else
       class="flex w-full grow items-center justify-center overflow-y-auto sm:px-16 lg:px-32 2xl:px-[500px]"
