@@ -1,5 +1,5 @@
 fastapi~=0.115.2
-ollama~=0.3.3
+ollama~=0.4.1
 pydantic~=2.9.2
 mypy~=1.13.0
 mypy-extensions~=1.0.0
