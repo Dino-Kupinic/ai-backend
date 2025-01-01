@@ -11,6 +11,8 @@ ai-backend is a backend for AI-powered applications. It leverages FastAPI and Ol
 
 ###  Prerequisites
 
+(Also available via `nix-shell`)
+
 - Python 3.12
 - pip
 - git
@@ -23,20 +25,42 @@ ai-backend is a backend for AI-powered applications. It leverages FastAPI and Ol
 git clone https://github.com/Dino-Kupinic/ai-backend.git
 ```
 
-2. Install dependencies
+2. [Optional] Using a python virtual environment for a local installation
+```bash
+python3 -m venv venv
+```
+Activate venv: (example for *nix systems)
+```bash
+source ./venv/bin/activate
+```
+
+3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file in the root directory and copy over the fields from the `.env.example` file.
+4. Create a `.env` file in the root directory and copy over the fields from the `.env.example` file.
 
-4. Download ollama for your system from [here](https://ollama.com/download).
+5. Download ollama for your system from [here](https://ollama.com/download).
+
+> [!NOTE]
+> Can be skipped if you use `nix-shell`.
 
 > [!NOTE]
 > In the future, ollama will be downloaded from the command line automatically.
 
-5. Run the server
+6. Start Ollama and Pull the model
+
+```bash
+ollama serve
+```
+
+```bash
+ollama pull llama3
+```
+
+7. Run the server
 
 ```bash
 fastapi dev src/main.py
@@ -55,7 +79,7 @@ The OpenAPI documentation is available at `/docs`. It is automatically generated
 ### Usage
 
 ```bash
-curl -X POST "http://localhost:8000/message/" -H "Content-Type: application/json" -d '{"text": "Tell me something about Vienna, Austria"}' --no-buffer
+curl -X POST "http://localhost:8000/message/" -H "Content-Type: application/json" -d '{"prompt": "Tell me something about Vienna, Austria", "model": "llama3"}' --no-buffer
 ```
 
 > [!TIP]
