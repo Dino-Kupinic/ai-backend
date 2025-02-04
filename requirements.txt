@@ -1,9 +1,9 @@
-fastapi~=0.115.6
+fastapi~=0.115.8
 ollama~=0.4.7
-pydantic~=2.10.4
+pydantic~=2.10.6
 mypy~=1.14.1
 mypy-extensions~=1.0.0
 pytest~=8.3.4
 
 # Optional dependencies
-ruff~=0.8.4
+ruff~=0.9.4
