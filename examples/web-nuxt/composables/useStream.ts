@@ -1,11 +1,12 @@
-import type { Model } from "~/types/model"
-
 export function useStream() {
   const config = useRuntimeConfig()
   const data = ref<string>("")
   const isLoading = ref(false)
 
-  const fetchStream = async (input: string, model: Model) => {
+  const fetchStream = async (
+    input: string,
+    model: { value: string; label: string; icon: string },
+  ) => {
     isLoading.value = true
     data.value = ""
 
@@ -14,7 +15,7 @@ export function useStream() {
         method: "POST",
         body: JSON.stringify({
           prompt: input,
-          model: model.name,
+          model: model.value,
         }),
         baseURL: config.public.API_URL,
       })
@@ -33,11 +34,18 @@ export function useStream() {
         if (typeof response === "string") {
           data.value = response
         } else {
-          console.error("Unexpected response type")
+          throw createError({
+            status: 500,
+            message: "Unexpected response type",
+          })
         }
       }
     } catch (error) {
-      console.error("Error fetching stream:", error)
+      const err = error as Error
+      throw createError({
+        status: 500,
+        message: err.message,
+      })
     } finally {
       isLoading.value = false
     }
