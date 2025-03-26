@@ -1,9 +1,5 @@
 <script setup lang="ts">
 const { sendMessage, input } = useChat()
-
-const send = async () => {
-  await sendMessage()
-}
 </script>
 
 <template>
@@ -20,7 +16,7 @@ const send = async () => {
       :maxrows="6"
       size="lg"
       placeholder="Send a message"
-      @keyup.enter="send"
+      @keyup.enter="sendMessage"
     />
     <div class="flex items-center">
       <UButton

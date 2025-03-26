@@ -7,7 +7,7 @@ const { data, text, isLoading, thinking } = useChat()
     <ChatHeader />
     <div
       v-if="data"
-      class="w-full grow overflow-y-auto sm:px-16 lg:px-32 2xl:px-[500px]"
+      class="mx-auto w-xl grow overflow-y-auto lg:w-2xl xl:w-3xl"
     >
       <ChatMessage :is-sender="true">
         {{ text }}

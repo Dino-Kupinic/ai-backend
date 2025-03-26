@@ -1,12 +1,16 @@
 export function useChat() {
-  const input = ref<string>("")
-  const text = ref<string>("")
-  const model = useState("model")
-  const thinking = ref<boolean>(false)
+  const input = useState<string>("input")
+  const text = useState<string>("text")
+  const model = useState<{
+    value: string
+    label: string
+    icon: string
+  }>("model")
+  const thinking = useState<boolean>("thinking", () => false)
 
   const { data, isLoading, fetchStream } = useStream()
 
-  const sendMessage = async () => {
+  async function sendMessage() {
     text.value = input.value
     input.value = ""
     thinking.value = true
@@ -14,7 +18,6 @@ export function useChat() {
       await fetchStream(text.value, model.value.value)
     }
     thinking.value = false
-    console.log(data.value)
   }
 
   return {

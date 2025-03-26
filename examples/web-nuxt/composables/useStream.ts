@@ -1,7 +1,7 @@
 export function useStream() {
   const config = useRuntimeConfig()
-  const data = ref<string>("")
-  const isLoading = ref(false)
+  const data = useState<string>("data")
+  const isLoading = useState<boolean>("isLoading", () => false)
 
   const fetchStream = async (input: string, model: string) => {
     isLoading.value = true
