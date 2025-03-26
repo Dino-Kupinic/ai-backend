@@ -3,10 +3,7 @@ export function useStream() {
   const data = ref<string>("")
   const isLoading = ref(false)
 
-  const fetchStream = async (
-    input: string,
-    model: { value: string; label: string; icon: string },
-  ) => {
+  const fetchStream = async (input: string, model: string) => {
     isLoading.value = true
     data.value = ""
 
@@ -15,7 +12,7 @@ export function useStream() {
         method: "POST",
         body: JSON.stringify({
           prompt: input,
-          model: model.value,
+          model: model,
         }),
         baseURL: config.public.API_URL,
       })

@@ -1,20 +1,5 @@
 <script setup lang="ts">
-const input = ref<string>("")
-const text = ref<string>("")
-const model = useState<{ value: string; label: string; icon: string }>("model")
-const thinking = ref<boolean>(false)
-
-const { data, isLoading, fetchStream } = useStream()
-
-const sendMessage = async () => {
-  text.value = input.value
-  input.value = ""
-  thinking.value = true
-  if (text.value.trim() && !isLoading.value) {
-    await fetchStream(text.value, model.value)
-  }
-  thinking.value = false
-}
+const { data, text, isLoading, thinking } = useChat()
 </script>
 
 <template>
@@ -41,31 +26,9 @@ const sendMessage = async () => {
     >
       <p>Hello, Dino Kupinic</p>
     </div>
-    <div class="flex items-end p-4 sm:px-16 lg:px-32 2xl:px-[500px]">
-      <UButton
-        color="neutral"
-        variant="link"
-        size="md"
-        icon="i-flowbite-paper-clip-outline"
-      />
-      <UTextarea
-        v-model="input"
-        class="grow"
-        autoresize
-        :rows="1"
-        :maxrows="8"
-        size="md"
-        placeholder="Send a message"
-        @keyup.enter="sendMessage"
-      />
-      <UButton
-        color="neutral"
-        variant="link"
-        size="md"
-        icon="i-tabler-microphone-filled"
-      />
-    </div>
+    <ChatInput />
+    <p class="py-1 text-center text-sm text-neutral-500">
+      The AI can make mistakes. Verify important information.
+    </p>
   </div>
 </template>
-
-<style scoped></style>
