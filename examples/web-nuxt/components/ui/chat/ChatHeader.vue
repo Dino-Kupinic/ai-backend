@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Model } from "~/types/model"
+import type { SelectMenuItem } from "@nuxt/ui"
 
 const config = useRuntimeConfig()
 
@@ -14,18 +14,23 @@ if (!data.value) {
   throw createError({ status: 404, message: "No models found" })
 }
 
-const models: Model[] = [
+const capitalizeFirstLetter = (str: string) =>
+  str.charAt(0).toUpperCase() + str.slice(1)
+
+const models = ref([
   ...data.value.text_models.map((model) => ({
-    name: model,
-    type: "text" as const,
+    value: model,
+    label: capitalizeFirstLetter(model),
+    icon: "i-heroicons-chat-bubble-left-right-16-solid",
   })),
   ...data.value.image_models.map((model) => ({
-    name: model,
-    type: "image" as const,
+    value: model,
+    label: capitalizeFirstLetter(model),
+    icon: "i-heroicons-photo-16-solid",
   })),
-]
+] satisfies SelectMenuItem[])
 
-const selected = useState<Model>("model", () => models[0])
+const selected = useState("model", () => models.value[0])
 </script>
 
 <template>
@@ -34,46 +39,18 @@ const selected = useState<Model>("model", () => models[0])
   >
     <USelectMenu
       v-model="selected"
-      :options="models"
+      :icon="selected?.icon"
+      :items="models"
+      size="sm"
       class="w-44"
-      option-attribute="name"
-    >
-      <template #label>
-        <Icon
-          :name="
-            selected.type === 'text'
-              ? 'i-heroicons-chat-bubble-left-right-16-solid'
-              : 'i-heroicons-photo-16-solid'
-          "
-        />
-        <span class="truncate">{{ selected.name }}</span>
-      </template>
-
-      <template #option="{ option: model }">
-        <Icon
-          :name="
-            model.type === 'text'
-              ? 'i-heroicons-chat-bubble-left-right-16-solid'
-              : 'i-heroicons-photo-16-solid'
-          "
-        />
-        <span class="truncate">{{ model.name }}</span>
-      </template>
-    </USelectMenu>
+    />
     <div class="space-x-2">
-      <UButton
-        icon="i-heroicons-information-circle"
-        size="sm"
-        color="gray"
-        square
-        variant="solid"
-      />
       <UButton
         icon="i-heroicons-pencil-square"
         size="sm"
-        color="gray"
-        square
-        variant="solid"
+        color="neutral"
+        variant="outline"
+        label="New Chat"
       />
     </div>
   </header>

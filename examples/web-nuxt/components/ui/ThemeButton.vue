@@ -1,5 +1,6 @@
-<script setup lang="ts">
+<script setup>
 const colorMode = useColorMode()
+
 const isDark = computed({
   get() {
     return colorMode.value === "dark"
@@ -11,16 +12,16 @@ const isDark = computed({
 </script>
 
 <template>
-  <ClientOnly>
+  <ClientOnly v-if="!colorMode?.forced">
     <UButton
       :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
-      color="gray"
+      color="neutral"
       variant="ghost"
-      aria-label="Theme"
       @click="isDark = !isDark"
     />
+
     <template #fallback>
-      <div class="h-8 w-8" />
+      <div class="size-8" />
     </template>
   </ClientOnly>
 </template>
