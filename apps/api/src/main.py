@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.routers import message, image, model
+from apps.api.src.routers import message, image, model
 
 app = FastAPI(
     title="AI Backend",

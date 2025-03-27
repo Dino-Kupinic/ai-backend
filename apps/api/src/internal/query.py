@@ -4,8 +4,8 @@ from typing import overload, Any, Union
 import ollama
 from fastapi import HTTPException
 
-from src.internal.models import TextModel, ImageModel
-from src.types.alias import LLMResponse
+from apps.api.src.internal.models import TextModel, ImageModel
+from apps.api.src.types.alias import LLMResponse
 
 
 class Query(ABC):
