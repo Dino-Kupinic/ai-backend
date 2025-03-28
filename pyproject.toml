@@ -18,6 +18,7 @@ mypy-extensions = ">=1.0.0,<2.0.0"
 
 [tool.poetry.extras]
 api = ["api"]
+cli = ["cli"]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

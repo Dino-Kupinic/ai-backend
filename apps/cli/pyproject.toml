@@ -1,0 +1,12 @@
+[tool.poetry]
+name = "cli"
+packages = [
+  { include = "cli", from = "." }
+]
+
+[tool.poetry.dependencies]
+click = "^8.1.8"
+setuptools = "^78.1.0"
+
+
+
