@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from src.internal.models import TextModel, ImageModel
+from apps.api.src.internal.models import TextModel, ImageModel
 
 router = APIRouter(prefix="/model", tags=["model"])
 

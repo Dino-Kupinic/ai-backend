@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from src.internal.models import TextModel, ImageModel
+from apps.api.src.internal.models import TextModel, ImageModel
 
 
 class Message(BaseModel):

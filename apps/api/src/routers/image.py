@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 
-from src.internal.models import ImageModel
-from src.internal.query import ImageQuery
-from src.types.requests import Image
+from apps.api.src.internal.models import ImageModel
+from apps.api.src.internal.query import ImageQuery
+from apps.api.src.types.requests import Image
 
 router = APIRouter(prefix="/image", tags=["image"])
 

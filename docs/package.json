@@ -1,6 +1,5 @@
 {
   "name": "ai-backend-docs",
-  "version": "0.4.1",
   "description": "Documentation for the AI Backend project",
   "scripts": {
     "docs:dev": "vitepress dev src",
