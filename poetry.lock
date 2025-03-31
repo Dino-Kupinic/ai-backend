@@ -181,8 +181,9 @@ files = [
 
 [extras]
 api = []
+cli = []
 
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "4112a97c985922acf51f0870165661561b08d96890fab53d39f5e7b5b28de7ee"
+content-hash = "81115ca351d5da8833b6568eeb033534d415e19677902d4ad5d5bc1629c51a63"
