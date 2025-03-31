@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 
-from src.internal.query import TextQuery
-from src.types.requests import Message
-from src.internal.models import TextModel
+from apps.api.src.internal.query import TextQuery
+from apps.api.src.types.requests import Message
+from apps.api.src.internal.models import TextModel
 
 router = APIRouter(prefix="/message", tags=["message"])
 
