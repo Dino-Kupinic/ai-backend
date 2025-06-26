@@ -12,3 +12,6 @@ dev-examples-nuxt:
 
 test:
     pytest
+
+release:
+    semantic-release publish
