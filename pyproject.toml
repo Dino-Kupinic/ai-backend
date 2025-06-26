@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ai-backend"
-version = "0.5.5"
+version = "v0.5.5"
 description = "ai backend"
 package-mode = false
 authors = [
