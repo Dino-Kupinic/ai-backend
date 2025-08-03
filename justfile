@@ -1,20 +1,20 @@
 install:
-  poetry install --no-root --all-extras
+    poetry install --no-root --all-extras
 
 fix-lock:
     poetry lock
 
 dev-api:
-  uvicorn apps.api.src.main:app --reload
+    uvicorn apps.api.src.main:app --reload
 
 dev-docs:
     cd docs && pnpm run docs:dev
 
 dev-examples-nuxt:
-  cd examples/web-nuxt && pnpm run dev
+    cd examples/web-nuxt && pnpm run dev
 
 test:
-  pytest
+    pytest
 
 release:
     semantic-release publish
