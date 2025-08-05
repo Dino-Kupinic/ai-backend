@@ -15,7 +15,9 @@ const { data, text, isLoading, thinking } = useChat()
       <ChatMessage :is-sender="false">
         <p v-if="isLoading">...</p>
         <template v-else>
-          <MDC :value="data" class="max-w-lg font-sans text-base text-wrap" />
+          <!-- TODO: fix mdc -->
+          <!--          <MDC :value="data" class="max-w-lg font-sans text-base text-wrap" />-->
+          <p>{{ data }}</p>
         </template>
       </ChatMessage>
     </div>
