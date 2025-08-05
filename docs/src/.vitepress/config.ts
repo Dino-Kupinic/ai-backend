@@ -1,10 +1,10 @@
-import {DefaultTheme} from "vitepress"
+import { DefaultTheme } from "vitepress"
 
 export default {
-  title: "AI Backend",
+  title: "Blackrose",
   description: "✨ powered by llama3",
   sitemap: {
-    hostname: "https://ai-backend.vercel.app",
+    hostname: "https://ai-backend.vercel.app"
   },
   lang: "en-US",
   themeConfig: {
@@ -12,20 +12,20 @@ export default {
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/Dino-Kupinic/ai-backend.git",
+        link: "https://github.com/Dino-Kupinic/ai-backend.git"
       },
       {
         icon: "twitter",
-        link: "https://x.com/DinoKupinic",
-      },
+        link: "https://x.com/DinoKupinic"
+      }
     ],
     search: {
-      provider: "local",
+      provider: "local"
     },
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2024-present Dino Kupinic",
-    },
+      copyright: "Copyright © 2024-present Dino Kupinic"
+    }
   },
   editLink: {
     pattern: "https://github.com/Dino-Kupinic/ai-backend/edit/main/docs/:path",
@@ -38,11 +38,11 @@ function nav(): DefaultTheme.NavItem[] {
   return [
     {
       text: "Home",
-      link: "/",
+      link: "/"
     },
     {
       text: "Guide",
-      link: "/guide/getting-started",
-    },
+      link: "/guide/getting-started"
+    }
   ]
 }

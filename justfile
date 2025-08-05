@@ -8,10 +8,13 @@ dev-api:
     uvicorn apps.api.src.main:app --reload
 
 dev-docs:
-    cd docs && pnpm run docs:dev
+    cd docs && bun run docs:dev
 
 dev-examples-nuxt:
-    cd examples/web-nuxt && pnpm run dev
+    cd examples/web-nuxt && bun run dev
+
+format:
+    ruff format
 
 test:
     pytest

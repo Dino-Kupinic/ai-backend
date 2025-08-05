@@ -9,7 +9,7 @@ class TextModel(Enum):
     LLAMA3 = "llama3"
     LLAMA3_1 = "llama3.1"
     GEMMA2 = "gemma2"
-    GEMMA3 = "gemma3"
+    GEMMA3 = "gemma3:1b"
     DEEPSEEK_R1 = "deepseek-r1"
 
 
