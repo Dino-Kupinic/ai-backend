@@ -1,11 +1,10 @@
 ---
 layout: home
 
-title: AI Backend
-titleTemplate: ✨ ai backend for your app powered by llama3
+title: Blackrose
 
 hero:
-  name: "AI Backend"
+  name: "Blackrose"
   text: "Documentation"
   tagline: ✨ ai backend for your app powered by llama3
   actions:
@@ -13,11 +12,11 @@ hero:
       text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: What is AI Backend?
+      text: What is Blackrose?
       link: /guide/what-is-ai-backend
 #  image:
 #    src: /logo.svg
-#    alt: AI Backend
+#    alt: Blackrose
 
 
 features:
