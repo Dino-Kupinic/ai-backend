@@ -1,14 +1,22 @@
-FROM python:3.12
+FROM python:3.12-slim
 
 ARG PORT
-ENV PORT $PORT
+ENV PORT=${PORT}
 
 WORKDIR /app
 
-COPY ./requirements.txt /code/requirements.txt
+RUN pip install --upgrade pip \
+    && pip install poetry
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+COPY pyproject.toml poetry.lock* /app/
+
+ENV POETRY_VIRTUALENVS_CREATE=false \
+    POETRY_NO_INTERACTION=1
+RUN poetry install --only main
 
 COPY apps/api/src /app/src
 
-CMD fastapi run src/main.py --port $PORT
+EXPOSE ${PORT}
+
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "${PORT}"]
+

@@ -1,15 +1,15 @@
-# AI Backend
+# Blackrose
 
 > [!CAUTION]
-> AI Backend is still in Development. You will find bugs and broken/unfinished features.
+> Blackrose is still in Development. You will find bugs and broken/unfinished features.
 
 ## 🌟 Overview
 
-ai-backend is a backend for AI-powered applications. It leverages FastAPI and Ollama to provide a robust API for natural language processing tasks.
+Blackrose is a backend for AI-powered applications.
 
 ## 🚀 Installation and Configuration
 
-###  Prerequisites
+### Prerequisites
 
 (Also available via `nix-shell`)
 
@@ -26,10 +26,13 @@ git clone https://github.com/Dino-Kupinic/ai-backend.git
 ```
 
 2. [Optional] Using a python virtual environment for a local installation
+
 ```bash
 python3 -m venv venv
 ```
+
 Activate venv: (example for *nix systems)
+
 ```bash
 source ./venv/bin/activate
 ```
@@ -37,7 +40,7 @@ source ./venv/bin/activate
 3. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+poetry install
 ```
 
 4. Create a `.env` file in the root directory and copy over the fields from the `.env.example` file.
@@ -113,12 +116,9 @@ This will run all tests in the `tests/` directory.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgements
-
-- Special thanks to the FastAPI and Ollama communities for their excellent tools and documentation
+This project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
 
 ---
 
-For more information, please [open an issue](https://github.com/Dino-Kupinic/ai-backend/issues) or contact the maintainers.
+For more information, please [open an issue](https://github.com/Dino-Kupinic/blackrose/issues) or contact the
+maintainers.

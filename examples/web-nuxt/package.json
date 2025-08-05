@@ -1,5 +1,5 @@
 {
-  "name": "ai-backend-web-nuxt",
+  "name": "@blackrose/web-nuxt",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,23 +10,18 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/mdc": "0.16.1",
-    "nuxt": "3.16.1",
-    "vue": "3.5.13"
+    "@nuxtjs/mdc": "0.17.2",
+    "nuxt": "4.0.3",
+    "vue": "3.5.18"
   },
   "devDependencies": {
     "@dkupinic/eslint-config": "^0.2.0",
     "@iconify-json/heroicons": "^1.2.2",
-    "@nuxt/eslint": "^0.7.6",
-    "@nuxt/ui": "^3.0.0",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "typescript": "^5.8.2",
-    "vue-tsc": "2.2.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3"
-    ]
+    "@nuxt/eslint": "^1.7.1",
+    "@nuxt/ui": "^3.3.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "typescript": "^5.9.2",
+    "vue-tsc": "3.0.5"
   }
 }
