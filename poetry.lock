@@ -1159,4 +1159,4 @@ cli = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.12"
-content-hash = "44e80ee710f9615b7c57670632ba175de27b3326ecb00311405be1903de31a47"
+content-hash = "4049905c8ad029f3ca172c3bc98b878ccf58363661e4051ce1b1a1acf61af62f"
